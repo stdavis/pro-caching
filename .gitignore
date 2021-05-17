@@ -1,0 +1,6 @@
+Cache/
+Index/
+.backups/
+.data.geodatabase-conch
+data.geodatabase-shm
+data.geodatabase-wal
