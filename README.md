@@ -8,11 +8,11 @@ Generate a traditional raster cache in the exploded format (one file per tile) u
 
 ### Anti-aliasing
 
-I'm unable to generate a cache that uses anti-aliasing for feature geometry or text labels.
+I'm unable to generate a cache that uses anti-aliasing for feature geometry or text labels. This was originally logged as an enhancement request as a result of one of my support cases (ENH-000136615). The enhancement is marked as implemented at Pro v2.8, however, it doesn't appear to be working to me. Perhaps I'm missing something?
 
 ### Exploded format
 
-I'm also unable to create a cache in the exploded format.
+I'm also unable to create a cache in the exploded format. This is recorded as BUG-000136613. It shows that this is in the product plan. 👍
 
 ## Steps to reproduce issues
 
