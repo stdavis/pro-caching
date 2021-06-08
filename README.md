@@ -18,7 +18,7 @@ I'm also unable to create a cache in the exploded format. This is recorded as BU
 
 1. ArcGIS Pro -> Options -> Display
 ![screenshot](options.png)
-1. `pypro pro-test.py`
+1. `propy pro-test.py`
 1. Open `Maps.aprx`
 1. Compare source map "Terrain" to "Preview" and notice that the anti-alias settings were not honored when the cache was built.
 ![screenshot](compare.png)
