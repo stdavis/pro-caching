@@ -8,7 +8,9 @@ Generate a traditional raster cache in the exploded format (one file per tile) u
 
 ### Anti-aliasing
 
-I'm unable to generate a cache that uses anti-aliasing for feature geometry or text labels. This was originally logged as an enhancement request as a result of one of my support cases (ENH-000136615). The enhancement is marked as implemented at Pro v2.8, however, it doesn't appear to be working to me at v2.9. Perhaps I'm missing something?
+I'm unable to generate a cache that uses anti-aliasing for feature geometry or text labels. This was originally logged as an enhancement request as a result of one of my support cases (ENH-000136615). The enhancement is marked as implemented at Pro v2.8, however, it doesn't appear to be working to me at v2.9. 
+
+Update (Nov 2022): A bug has been created for this in at v3.0.2: [BUG-000153899](https://my.esri.com/#/support/bugs/BUG-000153899).
 
 ### Exploded format
 
