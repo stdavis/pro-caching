@@ -26,3 +26,8 @@ I'm also unable to create a cache in the exploded format. This is recorded as [B
 ![screenshot](compare.png)
 1. Open `.\Cache\Exploded\_alllayers\L12` and notice that the cache is still in the compact format despite "EXPLODED" to "storage_format_type"
 ![screenshot](bundle.png)
+
+## History
+
+### 6/30/2023
+Verified that both bugs still exist at `v3.1.2`. :(
