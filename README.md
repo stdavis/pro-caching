@@ -30,4 +30,4 @@ I'm also unable to create a cache in the exploded format. This is recorded as [B
 ## History
 
 ### 6/30/2023
-Verified that both bugs still exist at `v3.1.2`. :(
+Verified that both bugs still exist at `v3.1.2`. 😞
