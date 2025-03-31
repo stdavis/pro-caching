@@ -6,37 +6,22 @@ Generate a traditional raster cache in the exploded format (one file per tile) u
 
 ## Issues
 
-### Anti-aliasing ✅
-
-I'm unable to generate a cache that uses anti-aliasing for feature geometry or text labels. This was originally logged as an enhancement request as a result of one of my support cases (ENH-000136615). The enhancement is marked as implemented at Pro v2.8, however, it doesn't appear to be working to me at v2.9.
-
-Update (Nov 2022): A bug has been created for this in at v3.0.2: [BUG-000153899](https://my.esri.com/#/support/bugs/BUG-000153899).
-
-Update (Mar 2025): This bug seems to have been fixed in v3.4. 👍
-
 ### Exploded format ✅
 
 I'm also unable to create a cache in the exploded format. This is recorded as [BUG-000136613](https://my.esri.com/#/support/bugs/BUG-000136613) which is marked as a duplicate of [BUG-000158716](https://my.esri.com/#/support/bugs/BUG-000158716).
 
 Update (Mar 2025): Esri support has confirmed that this bug is fixed in the upcoming v3.5 release. 👍
 
-### Unable to restart cache generation
+### Unable to write JPEGs ❌
 
-I'm unable to use the `RECREATE_EMPTY_TILES` parameter to update tiles for an existing cache in a stand-alone python script. I don't want to do our entire state-wide cache that takes days in a single job so I break it up. When I attempt to run the ManageTileCache tool with the `RECREATE_EMPTY_TILES` parameter, it fails with the following error:
+I have been unable to get the `ManageTileCache` tool to write JPEGs. I have tried using the ``import_tiling_scheme` parameter to import a tiling scheme that has JPEG as the format, but it still writes PNGs. I have also tried pointing the tool at an existing cache with a tiling scheme file that has the JPEG format, but it still writes PNGs.
 
-```text
-arcgisscripting.ExecuteError: Failed to execute. Parameters are not valid.
-ERROR 000258: Output C:\projects\pro-caching\Cache\Terrain\Terrain already exists
-Failed to execute (ManageTileCache).
-```
-
-This work just fine if you run the tool within Pro via the Python window, a notebook or in the geoprocessing tool dialog. It only fails when run in a stand-alone script.
-
-## Steps to reproduce issues
+## Steps to reproduce issues above
 
 1. `propy pro-test.py`
-1. Notice error message that is returned.
 1. Open `Maps.aprx`
+1. Notice that the `Format` is set to `Cache/PNG` in the properties of the `Cache/Existing/Terrain` cache.
+1. Notice that their is a bundle file in `Cache/Exploded/_alllayers/L04` and not individual image files.
 1. Run the following code in a notepad or Python window:
 
 ```python
@@ -58,17 +43,6 @@ arcpy.management.ManageTileCache(
 
 Notice that it works when run within Pro, but not in the `pro-test.py` script.
 
-## History
+## Possible Improvements
 
-### 6/30/2023
-
-Verified that both bugs still exist at `v3.1.2`. 😞
-
-### 6/18/2024
-
-Verified that both bugs still exist at `v3.3.0`. 😞
-Tried both DirectX 11 and 12 with and without hardware acceleration. No change.
-
-### 3/20/2025
-
-Verified that antialiasing is fixed and exploded format will be fixed. Found the restart bug.
+It would be nice if there was a way to generate caches directly to the exploded format. I was not able to make this happen. There does not seem to be a related parameter in the `ManageTileCache` tool and it seems to ignore the `CacheStorageInfo` setting in the `config.xml` file.

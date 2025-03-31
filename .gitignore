@@ -1,7 +1,9 @@
-Cache/
 Index/
 .backups/
 .data.geodatabase-conch
 data.geodatabase-shm
 data.geodatabase-wal
 .pyHistory
+Cache/Exploded
+Cache/Terrain
+Cache/Existing/Terrain/_alllayers/
